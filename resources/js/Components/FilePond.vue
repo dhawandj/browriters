@@ -35,6 +35,8 @@ function h_deleteFile(errors, file) {
     <FilePond
         name="file"
         v-model:files="files"
+        itemInsertInterval="3000"
+        maxParallelUploads="5"
         :server="{
             url: '',
             process: {

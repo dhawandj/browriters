@@ -348,18 +348,15 @@ Route::delete('delete/{fileName}', function (Request $request, $fileName) {
         return response()->json(['error' => 'File not found'], 404);
     };
 })->name('delete');
-Route::get('t', function () {
+Route::get('t', function () {  
     $path = storage_path('app/public/myFiles/BvPHyyPkk9H1r7bCXwN5DgNBrYzd7dSXV625YBl9.webp');
 
     if (file_exists($path)) {
         return response()->file($path);
     }
-
     return abort(404); // Return 404 if the file doesn't exist
 });
 Route::get('mj/{name}', function ($name) {
-
-
     // $path = storage_path('app/public/myFiles/BvPHyyPkk9H1r7bCXwN5DgNBrYzd7dSXV625YBl9.webp');
     $file = File::where('name', $name)->latest()->first();
         // return $file->url;
