@@ -5,7 +5,7 @@ defineProps(['order'])
 const formatDate = useFormatDate()
 </script>
 <template>
-    <div class="flex h-[20vh] flex-col justify-between rounded-lg border border-slate-700 bg-gradient-to-r from-secondaryAlt to-secondaryAlt p-2 shadow-xl">
+    <div class="flex h-[25vh] flex-col justify-between rounded-lg border border-slate-700 bg-gradient-to-r from-secondaryAlt to-secondaryAlt p-2 shadow-xl">
         <!-- top -->
         <div class="borde flex justify-between p-2">
             <span><i class="pi pi-book" /> {{ order.books[0].category.name }}</span>

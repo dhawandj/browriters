@@ -12,10 +12,11 @@ import { Head } from '@inertiajs/vue3';
         <Head title="home" />
 
         <!-- <object data="/storage/myFiles/FDdXbPVSD863eEnScAaWMDUBx95qH1KOo0Hw3alx.pdf" class="w-svw"></object> -->
-        <HeroSpace />
-        <DashboardSpace />
+        <!-- <HeroSpace /> -->
         <AssignmentSpace />
+        <DashboardSpace />
         <RecordSpace />
         <ServiceDetails />
     </PrimaryLayout>
 </template>
+

@@ -32,6 +32,7 @@ function submit() {
         v-model:visible="visibleBottom"
         header="hello bro!!"
         position="bottom"
+        class=""
         style="height: auto"
     >
         <div class="mx-auto max-w-xl space-y-3">
