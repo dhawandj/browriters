@@ -50,7 +50,7 @@ function roundToTwoDecimals(value) {
             >
                 <table class="min-w-full">
                     <thead>
-                        <tr class="text-sm">
+                        <tr class="text-sm text-textPrimary">
                             <th class="text-start">Books</th>
                             <th class="">Pages</th>
                             <th class=""></th>
@@ -63,7 +63,7 @@ function roundToTwoDecimals(value) {
                         <tr
                             v-for="book in books"
                             :key="book.name"
-                            class="border-t border-secondaryAlt text-xs"
+                            class="border-t border-secondaryAlt text-xs text-primary"
                         >
                             <td class="p-2">{{ book.name }}</td>
                             <td class="p-2">{{ book.pages }}</td>
@@ -84,7 +84,7 @@ function roundToTwoDecimals(value) {
                         </tr>
                         <tr class="border-t border-secondaryAlt text-xs">
                             <td colspan="5" class="p-1.5 text-end">
-                                Service Charge
+                                stenographer fee
                             </td>
                             <td class="p-1.5">₹{{ SERVICE_CHARGE }}</td>
                         </tr>
@@ -98,7 +98,7 @@ function roundToTwoDecimals(value) {
                             <td colspan="5" class="p-1.5 text-end font-bold">
                                 Grand Total
                             </td>
-                            <td class="p-1.5 font-bold">₹{{ grandTotal }}</td>
+                            <td class="p-1.5 font-bold text-green-500">₹{{ grandTotal }}</td>
                         </tr>
                     </tfoot>
                 </table>

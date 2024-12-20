@@ -10,7 +10,7 @@ import Menu from './Menu.vue';
         <!-- <Link :href="route('profile.edit')"><p class="text-end ">  <i class="pi pi-user  "/></p></Link> -->
          <div class="flex justify-between items-center">
 
-             <p class="capitalize text-secondary "> <i class="pi pi-user" /> {{ $page.props.auth.user?.name??'login bro!! ' }}</p>
+             <Link   :href="$page.props.auth.user?.name?route('profile.edit'):route('login')"><p class="capitalize text-secondary "> <i class="pi pi-user" /> {{ $page.props.auth.user?.name??'login bro!! ' }}</p></Link>
              <Menu />
          </div>
         <div class="p-10" >
@@ -34,6 +34,7 @@ import Menu from './Menu.vue';
                     <i class="pi pi-angle-right text-secondary "/>
                 </div>
                 </Link>
+                 <Link :href="route('record')" >
                 <div class="flex p-2 justify-between items-center border-b border-background hover:bg-background transition duration-300 rounded-lg cursor-pointer">
                     <i class="pi pi-book text-primary "/>
                     <div class="" >record writing
@@ -42,7 +43,9 @@ import Menu from './Menu.vue';
                     </div>
                     <i class="pi pi-angle-right text-secondary "/>
                 </div>
-                
+                </Link>
+
+                <Link :href="route('observation')" > 
                 <div class="flex p-2 justify-between items-center border-b border-background hover:bg-background transition duration-300 rounded-lg cursor-pointer">
                     <i class="pi pi-book text-primary "/>
                     <div>observation writing
@@ -50,6 +53,7 @@ import Menu from './Menu.vue';
                     </div>
                     <i class="pi pi-angle-right text-secondary "/>
                 </div>
+                </Link>
                
             </div>
                 

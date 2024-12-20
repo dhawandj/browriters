@@ -99,7 +99,7 @@ const submit = () => {
                 </PrimaryButton>
 
             </div>
-            <p class="rounded-md ml-6 text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800">register her</p>
+            <Link :href="route('register')"><p class="cursor-pointer  p-1 text-center border-background  mt-5 border-t-2 text-sm text-gray-600  hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800">Don't have an account? <span class="text-primary hover:text-yellow-400">Register!</span>  </p></Link> 
         </form>
     </GuestLayout>
 </template>

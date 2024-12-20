@@ -11,6 +11,7 @@ const props = defineProps(['oldOrders']);
             <div v-for="order in oldOrders"  class=" rounded-md bg-secondaryAlt p-2 space-y-2">
                 <div class="grid grid-cols-2 gap-1">
                    <div class="p-1   text-sm overflow-hidden text-secondary font-semibold ">
+                    <p >orderId: <span class="text-textPrimary font-normal"> <i class="pi pi-box"/> {{ order.id }}</span></p>
                     <p >books: <span class="text-textPrimary font-normal">{{ order.books.length }}</span></p>
                     <p >date: <span class="text-textPrimary font-normal">{{ order.date }}</span></p>
                     <!-- <p >Cost:<span class="text-textPrimary font-normal"> $500 </span></p> -->

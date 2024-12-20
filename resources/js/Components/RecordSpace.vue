@@ -17,7 +17,7 @@ import { Link } from '@inertiajs/vue3';
             <!-- <span class="text-primary">myOrders</span> -->
             <Link :href="route('orders')">
                 <Tag
-                    value="Show  My Orders "
+                    value="show  my orders "
                     icon="pi pi-box"
                     severity="secondary"
                     class="text-lg"
@@ -27,22 +27,23 @@ import { Link } from '@inertiajs/vue3';
             <!-- </p> -->
         </div>
 
-        <div class="">
-            <div class="bg-secondaryAl flex justify-between gap-3 p-3 text-secondary">
+        <div class="border-t p-3 border-secondaryAlt">
+            <div class=" text-secondary">
                 <div>
                     <p class="text-xs">
-                        <strong>browriters.com</strong> 
+                        <strong>© browriters.com. 2025</strong> 
                         <!-- <p class="text-xs">- Your Trusted Partner for   Writing Services</p> -->
-                        <p class="text-xs">- now in Banglore</p>
                         <p class="text-xs">- support@browriters.com</p>
+                        <p class="text-xs">- now in Banglore</p>
+                        <p class="text-xs">- Privacy & Terms</p>
+                        <p class="text-xs">- FAQs</p>
+                        <p class="text-xs">- partner</p>
                         
                     </p>
                 </div>
 
-                <div class="space-x-4">
-                    <i
-                        class="pi pi-facebook cursor-pointer hover:text-textPrimary"
-                    />
+                <div class="space-x-4 text-end mt-2">
+                    <i class="pi pi-facebook cursor-pointer hover:text-textPrimary"/>
                     <i class="pi pi-telegram" />
                     <i class="pi pi-instagram" />
                     <i class="pi pi-youtube" />

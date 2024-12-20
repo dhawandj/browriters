@@ -27,7 +27,7 @@ const toggle = ref(false);
         <div class="grid grid-cols-2 gap-3">
             <OrderDeliveryDetailsSpace :order="order" />
             <OrderEstimationSpace :books="order.books" />
-            <OrderTrackingSpace />
+            <OrderTrackingSpace  :order="order"/>
         </div>
 
         <!-- <Stepper :order="order" /> -->

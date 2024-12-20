@@ -17,7 +17,7 @@ const props = defineProps(['latestOrders']);
                         <p >No books: <span class="text-textPrimary font-normal">{{order.books.length}}</span></p>
                         <p >Total Cost:<span class="text-textPrimary font-normal">₹{{order.amount}} </span></p>
                         <p >date: <span class="text-textPrimary font-normal">{{order.date}}</span></p>
-                        <p >order: <span class="text-green-700">conformed</span></p>
+                        <p >order: <span class="text-green-700">confirmed</span></p>
                     </div>
                 </div>
                 <Link class="w-full block  bg-background p-2  text-center text-yellow-500" :href="route('order',{order:order})">see more </Link>  

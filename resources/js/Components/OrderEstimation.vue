@@ -81,7 +81,7 @@ function roundToTwoDecimals(value) {
                         </tr>
                         <tr class="border-t border-secondaryAlt text-xs">
                             <td colspan="5" class="p-1.5 text-end">
-                                Service Charge
+                                stenographer fee
                             </td>
                             <td class="p-1.5">₹{{ SERVICE_CHARGE }}</td>
                         </tr>

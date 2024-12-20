@@ -41,7 +41,7 @@ function deleteBook() {
 
 <template>
     <div class="space-y-3">
-        <p class="font-semibold text-textPrimary">Add books</p>
+        <p class="font-semibold text-textPrimary">Add books <span class="text-xs text-secondary">[{{ book }}]</span> </p>
         <div class="borde grid grid-cols-2 gap-2 p-1">
             <Toast :breakpoints="toastBreakpoints" />
             <header
@@ -77,12 +77,15 @@ function deleteBook() {
                 class="rounded-md bg-secondaryAlt px-3 py-2 text-xs text-error transition-all duration-300 hover:bg-textPrimary hover:text-secondaryAlt xs:text-sm"
                 @click="deleteBook"
             >
+            <i class="pi pi-trash " style="font-size: 0.75rem;"/>
+
                 Delete
             </button>
             <button
                 class="rounded-md bg-secondaryAlt px-3 py-2 text-xs text-green-600 transition-all duration-300 hover:bg-textPrimary hover:text-secondaryAlt xs:text-sm"
                 @click="addBook"
             >
+                <i class="pi pi-book " style="font-size: 0.75rem;"/>
                 Add Book {{ length }}
             </button>
             <!-- <PrimaryLink
@@ -91,7 +94,11 @@ function deleteBook() {
                 preserve-scroll
                 lable="estimate bill"
             /> -->
-            <MainButton  id="Bill-estimation"  lable="estimate bill" @click="$emit('estimate')" class="col-span-2"  />
+            <!-- <MainButton  id="Bill-estimation"  lable="estimate bill" @click="$emit('estimate')" class="col-span-2"  /> -->
+            <a  href="#Bill-estimation"  id="Bill-estimation"   class="col-span-2 rounded-md flex  justify-center gap-3 items-center  bg-secondaryAlt px-3 py-2 text-xs text-secondary transition-all duration-300 hover:bg-textPrimary hover:text-secondaryAlt xs:text-sm"  >
+                <i class="pi pi-receipt"/>
+                estimate bill
+            </a>
         </div>
     </div>
 </template>

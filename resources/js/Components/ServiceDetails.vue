@@ -56,7 +56,7 @@ const services = [
 <template>
     <div class="space-y-3">
         <p class=" font-semibold text-textPrimary flex justify-between">
-              <span>Service Details</span> <span class="mr-2 text-red-500" @click="toggle = !toggle">x</span>  </p>
+              <span>Service Details</span> <span class="mr-2 text-primary" @click="toggle = !toggle"> {{toggle?'x':'+'  }}</span>  </p>
         <div v-show="toggle"  class="rounded-lg bg-secondaryAlt p-4 text-sm shadow-sm">
             <section v-for="(s, index) in services" :key="index" class="mb-4">
                 <header class="mb-2 font-medium text-textPrimary">

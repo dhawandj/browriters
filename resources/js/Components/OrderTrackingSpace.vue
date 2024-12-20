@@ -2,7 +2,9 @@
 
 import { ref } from 'vue';
 import { Drawer } from 'primevue';
-defineProps(['books']);
+import { useFormatDate } from '@/Pages/helpers';
+defineProps(['order']);
+const formatDate = useFormatDate()
 
 const visibleBottom = ref(false);
 </script>
@@ -40,7 +42,7 @@ const visibleBottom = ref(false);
     <!-- Status Texts -->
     <div class="flex flex-col justify-start">
          <span class="h-8 flex items-center text">Order Placed </span>
-        <div class="h-14 text-sm text-textPrimary">Estimated pickup in 24 Nov 2023 <p> 9.00am to 8.00pm</p></div>
+        <div class="h-14 text-sm text-textPrimary">Estimated pickup in {{ formatDate(order.created_at) }} <p> 9.00am to 8.00pm</p></div>
         <span class="h-8 flex items-center text-sm">Book picked</span>
         <div class="h-14"></div>
         <span class="h-8 flex items-center text-sm">Writing</span>

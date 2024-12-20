@@ -24,7 +24,6 @@ Route::get('/', function () {
     //     'phpVersion' => PHP_VERSION,
     // ]);
     return Inertia::render('Home');
-
 });
 
 Route::get('/dashboard', function () {
@@ -107,14 +106,18 @@ Route::post('/upload', function (Request $request) {
     // Redirect back with flash data
 
     return back()->with('message', 'ok');
-})->name('upload');
+})->name('upload1');
 //file delete
 Route::delete('/delete-file/{id}', function ($id) {
     // Find the file record in the database
     $file = File::findOrFail($id);
+    if ($file === null) {
+        # code...
+        return response()->json(['error' => 'file is null'], 500);
+    }
 
     // Delete the file from storage
-    Storage::disk('public')->delete($file->url);
+    Storage::disk('public')->delete($file?->url);
 
     // Remove the record from the database
     $file->delete();
@@ -220,6 +223,9 @@ Route::get('assignment', function () {
 Route::get('record', function () {
     return Inertia::render('Record');
 })->name('record');
+Route::get('observation', function () {
+    return Inertia::render('Observation');
+})->name('observation');
 //orders
 Route::get('orders', function () {
     $id = Auth::id();
@@ -331,7 +337,7 @@ Route::post('upload/{id}/', function (Request $request, $id) {
 
 Route::get('upload/{id}/', function (Request $request, $id) {
     return Storage::url('myfiles/1VMlWGm5mSRpRvLyQUazBAfMKLZNkWrTTUtHktqU.jpg');
-})->withoutMiddleware(VerifyCsrfToken::class)->name('upload');
+})->withoutMiddleware(VerifyCsrfToken::class)->name('uploa');
 
 Route::delete('delete/{fileName}', function (Request $request, $fileName) {
     // file name for or url 
@@ -339,7 +345,11 @@ Route::delete('delete/{fileName}', function (Request $request, $fileName) {
         ->orWhere('url', 'myFiles/' . $fileName)
         ->latest()->first();
     // dd($file->url);
-
+    if ($file === null) {
+        // for we instant file upload and delete it for that
+    return back();
+        
+    }
     // Check if the file exists in the storage
     if (Storage::disk('public')->exists($file->url)) {
         // Delete the file from storage
@@ -350,7 +360,7 @@ Route::delete('delete/{fileName}', function (Request $request, $fileName) {
         return response()->json(['error' => 'File not found'], 404);
     };
 })->name('delete');
-Route::get('t', function () {  
+Route::get('t', function () {
     $path = storage_path('app/public/myFiles/BvPHyyPkk9H1r7bCXwN5DgNBrYzd7dSXV625YBl9.webp');
 
     if (file_exists($path)) {
@@ -361,7 +371,7 @@ Route::get('t', function () {
 Route::get('mj/{name}', function ($name) {
     // $path = storage_path('app/public/myFiles/BvPHyyPkk9H1r7bCXwN5DgNBrYzd7dSXV625YBl9.webp');
     $file = File::where('name', $name)->latest()->first();
-        // return $file->url;
+    // return $file->url;
     // $path = storage_path('app/public/myFiles/' . $name);
     $path = storage_path('app/public/' . $file->url);
 
@@ -381,10 +391,10 @@ Route::post('delivery-details/{order}/store', function (Request $request, Order 
     ]);
 
     $order->update([
-        'p_address'=>$validatedData['pickupAddress'],
-        'd_address'=>$validatedData['deliveryAddress'],
-        'p_pincode'=>$validatedData['pickupPincode'],
-        'phone'=>$validatedData['phone'],
+        'p_address' => $validatedData['pickupAddress'],
+        'd_address' => $validatedData['deliveryAddress'],
+        'p_pincode' => $validatedData['pickupPincode'],
+        'phone' => $validatedData['phone'],
     ]);
 
     return back();
