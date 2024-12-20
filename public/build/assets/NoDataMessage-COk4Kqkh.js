@@ -1,1 +1,0 @@
-import{o as t,e as s,t as o}from"./app-BbfR90Ma.js";const a={class:"rounded-md bg-secondaryAlt p-3 text-center text-blue-500"},p={__name:"NoDataMessage",props:["msg"],setup(e){return(n,r)=>(t(),s("p",a,o(e.msg??"no data found!"),1))}};export{p as _};
