@@ -41,7 +41,7 @@ const submit = () => {
             {{ status }}
         </div>
         <form @submit.prevent="submit">
-            <div>
+            <div >
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
@@ -97,8 +97,9 @@ const submit = () => {
                 >
                     Log in
                 </PrimaryButton>
-                <a :href="route('google.login')" class="p-1.5 rounded-md ml-5  bg-primary text-secondaryAlt">Google login</a>
+
             </div>
+            <p class="rounded-md ml-6 text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800">register her</p>
         </form>
     </GuestLayout>
 </template>

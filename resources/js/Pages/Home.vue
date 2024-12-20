@@ -14,9 +14,9 @@ import { Head } from '@inertiajs/vue3';
         <!-- <object data="/storage/myFiles/FDdXbPVSD863eEnScAaWMDUBx95qH1KOo0Hw3alx.pdf" class="w-svw"></object> -->
         <!-- <HeroSpace /> -->
         <AssignmentSpace />
-        <DashboardSpace />
+        <!-- <DashboardSpace /> -->
         <RecordSpace />
-        <ServiceDetails />
+        <!-- <ServiceDetails /> -->
     </PrimaryLayout>
 </template>
 

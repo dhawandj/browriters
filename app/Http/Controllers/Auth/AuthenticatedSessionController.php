@@ -39,9 +39,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         
         //check  previousUrl and redirect back to payment
-        if ($previousUrl === route('assignment.index')) {
-            return redirect()->intended(route('assignment.index'))  ;
-        }
+        // if ($previousUrl === route('assignment.index')) {
+        //     return redirect()->intended(route('assignment.index'))  ;
+        // }
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

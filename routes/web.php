@@ -17,12 +17,14 @@ use Inertia\Inertia;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
+    return Inertia::render('Home');
+
 });
 
 Route::get('/dashboard', function () {
@@ -213,7 +215,7 @@ Route::get('home', function () {
 
 Route::get('assignment', function () {
     return Inertia::render('Assignment');
-})->name('assignment');
+})->name('assignment')->middleware('auth');
 
 Route::get('record', function () {
     return Inertia::render('Record');
@@ -237,7 +239,7 @@ Route::get('orders', function () {
         'oldOrders' => $allOrders->slice(2), // All except the latest 2
         'latestOrders' => $allOrders->take(2), // Only the latest 2
     ]);
-})->name('orders')->middleware('auth');
+})->name('orders')->middleware(['auth', 'verified']);
 
 Route::get('order/{order}', function (Order $order) {
 

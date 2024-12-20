@@ -42,7 +42,7 @@ function roundToTwoDecimals(value) {
 
 <template>
     <!-- <pre>{{ books }}</pre> -->
-    <div class="space-y-3">
+    <div class="space-y-3" >
         <p class="font-semibold text-textPrimary" >Bill-estimation</p>
         <div class="grid grid-cols-1 gap-2 p-1">
             <div

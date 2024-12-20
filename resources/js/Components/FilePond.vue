@@ -43,9 +43,8 @@ function h_fineshe() {
     <FilePond
         name="file"
         v-model:files="files"
-        itemInsertInterval="5000"
+        itemInsertInterval="1000"
         maxParallelUploads="5"
-        :allowReorder="true"
         @addfile="h_processFile"
         @processfiles="h_fineshe"
         :server="{
